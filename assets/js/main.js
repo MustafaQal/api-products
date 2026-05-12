@@ -10,25 +10,32 @@ const getCategories = async () => {
 }
 getCategories();
 
-
 const displayCategories = async () => {
-
     const categoriesGet = await getCategories();
-    console.log(categoriesGet);
+
     const categories = categoriesGet.map((category) => {
         return `
-            <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition hover:-translate-y-2 cursor-pointer">
-                <h2 class="font-semibold capitalize text-lg"> ${category} </h2>
+            <div
+                onclick="goToCategory('${category}')"
+                class="group bg-white border border-gray-100 shadow-sm rounded-2xl p-6 text-center
+                       hover:shadow-xl hover:-translate-y-2 hover:border-blue-200
+                       transition-all duration-300 cursor-pointer"
+            >
+                <h3 class="font-semibold text-lg capitalize text-gray-800 group-hover:text-blue-600 transition">
+                    ${category.replaceAll("-", " ")}
+                </h3>
             </div>
-        `
+        `;
     }).join("");
 
     document.querySelector(".categoryList").innerHTML = categories;
+};
 
-}
 displayCategories();
 
-
+const goToCategory = (category) => {
+    window.location.href = `category.html?name=${category}`;
+};
 
 // Mustafa: Get Products List
 
