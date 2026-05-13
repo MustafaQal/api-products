@@ -68,10 +68,9 @@ const displayProducts = async () => {
                     </div>
                 </div>
                 -->
-            <!--Asked some help to improve the card design :) hhhhhh-->
+            <!--Asked AI some help to improve the card design :) hhhhhh-->
 
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300  group">
-                <div class=" h-52 bg-gray-100">
+        <div onclick="goToProduct(${product.id})" class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer">                <div class=" h-52 bg-gray-100">
                     <img class="max-w-full max-h-full object-contain group-hover:scale-105 transition"
                         src="${product.thumbnail}" 
                         alt="${product.title}"
@@ -96,3 +95,8 @@ const displayProducts = async () => {
 
 displayProducts();
 
+//Mustafa: This section is for displaying details based on the ID, Note that I  updated the div above using the onclick event
+//copy it to category,js as well
+const goToProduct = (id) => {
+    location.href = `singleproduct.html?id=${id}`;
+};
