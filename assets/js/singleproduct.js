@@ -15,17 +15,17 @@ const displaySingleProduct = async () => {
     //Mustafa: The Right Corner 
     document.querySelector(".productTitle").textContent = product.title;
     console.log(product);
-    // const productID = product.map((single) => {
+    // const productID = product.map((ProID) => {
     //     return `
     //             <div>
-    //             <h3> ${single.title} </h3>
+    //             <h3> ${ProID.title} </h3>
     //             </div>
     //     `;
     // }).join("");
     document.querySelector(".productDetails").innerHTML = `
-    <!--Mustafa Draft-->
+    <!--Mustafa draft design-->
     <div>
-            <h2 class="">${product.title}</h2>
+            <h2 class="font-bold text-center">${product.title}</h2>
             <img src="${product.thumbnail}" class=""/>
             <p class=""> ${product.description}</p>
             <p class="">$${product.price}</p>
